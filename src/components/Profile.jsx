@@ -4,7 +4,7 @@ import githubLogo from "../assets/github-logo.png";
 
 const Profile = () => {
   return (
-    <div className="md:flex m-5 p-5 shadow-2xl w-3/4 justify-center justify-items-center rounded-md">
+    <div className="md:flex m-5 p-5 shadow-2xl w-3/4 justify-center justify-items-center rounded-md  transition ease-in duration-500 transform hover:scale-105">
       <img
         src={pinngamImage}
         alt="Pinngam"

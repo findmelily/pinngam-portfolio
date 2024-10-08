@@ -2,6 +2,7 @@ import Card from "./components/Card";
 import Profile from "./components/Profile";
 import ThemeIcon from "./components/ThemeIcon";
 import Navbar from "./components/Navbar";
+import Skill from "./components/Skill";
 
 import starterpackpic from "./assets/Starterpack.jpg";
 import helloworldpic from "./assets/Helloworld.jpg";
@@ -20,6 +21,7 @@ function App() {
         <div class="flex justify-center">
           <Profile />
         </div>
+        <Skill />
         <div class="flex justify-center">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <Card
