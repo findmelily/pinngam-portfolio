@@ -1,0 +1,36 @@
+"use client";
+
+import * as React from "react";
+import { motion, type HTMLMotionProps } from "motion/react";
+import {
+  Slot,
+  type WithAsChild,
+} from "@/components/animate-ui/primitives/animate/slot";
+
+type ButtonProps = WithAsChild<
+  HTMLMotionProps<"button"> & {
+    hoverScale?: number;
+    tapScale?: number;
+  }
+>;
+
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ hoverScale = 1.05, tapScale = 0.95, asChild = false, ...props }, ref) => {
+    // ใช้ as any เพื่อบอก TypeScript ให้ข้ามการเช็ค Union Type ของ Component ชั่วคราว
+    // (เพราะภายนอกเราใช้ ButtonProps คุมความถูกต้องไว้แน่นหนาแล้ว)
+    const Component = (asChild ? Slot : motion.button) as any;
+
+    return (
+      <Component
+        ref={ref}
+        whileTap={{ scale: tapScale }}
+        whileHover={{ scale: hoverScale }}
+        {...props}
+      />
+    );
+  },
+);
+
+Button.displayName = "Button";
+
+export { Button, type ButtonProps };
