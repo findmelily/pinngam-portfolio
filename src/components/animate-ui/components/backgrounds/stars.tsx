@@ -123,7 +123,7 @@ function StarsBackground({
       >
         <StarLayer
           count={1000}
-          size={1}
+          size={3}
           transition={{ repeat: Infinity, duration: speed, ease: "linear" }}
           starColor={starColor}
         />
