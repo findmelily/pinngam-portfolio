@@ -1,34 +1,31 @@
-import pinngamImage from "../assets/Pinngam.jpg";
-import Resume from "../assets/Resume.pdf";
+import pinngamImage from "@/assets/Pinngam.jpg";
+import Resume from "@/assets/Resume.pdf";
+import { Button } from "@/components/animate-ui/components/buttons/button";
 
-import {
-  Button,
-  type ButtonProps,
-} from "@/components/animate-ui/components/buttons/button";
 
-interface ButtonDemoProps {
-  variant: ButtonProps["variant"];
-  size: ButtonProps["size"];
-}
 
-const Profile = () => {
+
+const Aboutme = () => {
   return (
-    <div className="md:flex m-5 p-5 shadow-2xl w-3/4 justify-center justify-items-center rounded-md  transition ease-in duration-500 transform hover:scale-105">
-      <img
-        src={pinngamImage}
-        alt="Pinngam"
-        className="rounded-full w-56 h-56 m-3"
-      />
-      <div className="my-5 mx-10">
-        <h1 className="text-3xl font-bold">Hi, I'm Pinngam Sombutsri👋</h1>
-        <h3 className="text-xl font-semibold my-2">
-          A passionate web developer.
-        </h3>
-        <p className="overflow-ellipsis">
-          I specialize in building exceptional digital experiences with modern
-          web technologies. Focus on writing clean and accessible code, and I am
-          always eager to learn new technologies and improve my skills.
-        </p>
+    <div className="bg-slate-50 justify-center justify-items-center rounded-md ">
+      <div className="grid grid-cols-4 md:grid-cols-2 gap-4 items-center">
+        <img
+          src={pinngamImage}
+          alt="Pinngam"
+          className="rounded-full size-80"
+        />
+       
+        <div className="grid grid-cols-1 gap-4 my-5 mx-10">
+          <h1 className="text-3xl font-bold">Hi, I'm Pinngam Sombutsri👋</h1>
+          <h3 className="text-xl font-semibold my-2">
+            A passionate web developer.
+          </h3>
+          <p className="overflow-ellipsis">
+            I specialize in building exceptional digital experiences with modern
+            web technologies. Focus on writing clean and accessible code, and I
+            am always eager to learn new technologies and improve my skills.
+          </p>
+        </div>
         <div className="flex mt-5">
           <a href="https://github.com/findmelily">
             <Button
@@ -57,9 +54,9 @@ const Profile = () => {
             </Button>
           </a>
         </div>
+        </div>
       </div>
-    </div>
   );
 };
 
-export default Profile;
+export default Aboutme;

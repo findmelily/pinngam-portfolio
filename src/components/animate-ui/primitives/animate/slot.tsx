@@ -29,7 +29,7 @@ function mergeRefs<T>(
       if (typeof ref === 'function') {
         ref(node);
       } else {
-        (ref as React.RefObject<T | null>).current as any == node;
+        (ref as React.RefObject<T | null>).current = node;
       }
     });
   };

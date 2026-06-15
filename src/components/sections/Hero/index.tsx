@@ -1,12 +1,13 @@
 import { useRef, useState } from "react";
 import { motion, AnimatePresence, PanInfo } from "framer-motion";
-import folder from "../../assets/icon-element/folder.png";
+import folder from "@/assets/icon-element/folder.png";
 import { MorphingText } from "@/components/animate-ui/primitives/texts/morphing";
 import { TechIcons, srcMap } from "@/data/TechstackIconData";
-import { StarsBackground } from "#components/animate-ui/components/backgrounds/stars";
 import { MorphingSubHeader, HeaderText, StatusText } from "@/data/HeroData";
-import Status from "#components/HeroComponents/Status";
-import arrows from "@/assets/icon-element/arrows.png";
+import Status from "@/components/sections/Hero/components/Status";
+import ArrowDown from "@/components/sections/Hero/components/Arrows";
+
+// import { StarsBackground } from "#components/animate-ui/components/backgrounds/stars";
 
 interface HeroProps {
   loop: boolean;
@@ -76,14 +77,12 @@ export const Hero = ({ loop, holdDelay }: HeroProps) => {
     }
   };
   return (
-    <StarsBackground
-      className="bg-[radial-gradient(ellipse_at_bottom,_#bae6fd_0%,_#f8fafc_100%)] border-white/10 w-full relative overflow-hidden"
-      starColor="#78350f"
+    <section
+      id="home"
+      ref={constraintsRef}
+      className="flex justify-center items-center bg-gradient-to-b from-slate-50 to-sky-200 border-white/10 h-screen overflow-hidden relative"
     >
-      <div
-        className="flex justify-center items-center bg-gradient-to-b from-slate-50 to-sky-200/50 border-white/10 shadow-lg relative h-screen overflow-hidden"
-        ref={constraintsRef}
-      >
+      <div>
         <AnimatePresence>
           {popup.show && (
             <motion.div
@@ -203,16 +202,9 @@ export const Hero = ({ loop, holdDelay }: HeroProps) => {
             whileDrag={{ scale: 1.1, opacity: 0.8 }}
           />
 
-          <motion.div
-            className="absolute m-12 flex justify-center items-center bottom-20 left-0 right-0 animate-bounce"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 2 }}
-          >
-              <img src={arrows} alt="arrows icon" className="w-12 h-12 opacity-50" />
-          </motion.div>
+          <ArrowDown />
         </div>
       </div>
-    </StarsBackground>
+    </section>
   );
 };

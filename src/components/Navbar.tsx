@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { MenuIcon } from "lucide-react";
 
-function Navbar() {
+export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -19,7 +19,7 @@ function Navbar() {
 
   const navItems = [
     { name: "Home", href: "#home" },
-    { name: "Profile", href: "#profile" },
+    { name: "About me", href: "#about-me" },
     { name: "Activities", href: "#activities" },
   ];
 
@@ -27,16 +27,16 @@ function Navbar() {
     <nav
       className={`sticky top-0 w-full z-50 transition-all duration-500 border-b ${
         isScrolled
-          ? "bg-sky-100/80 backdrop-blur-md border-white/10 py-4 shadow-lg"
+          ? "bg-white/80 backdrop-blur-md border-white/10 py-4 shadow-lg"
           : "bg-transparent border-transparent py-6"
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         <a
           href="#home"
-          className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-black to-slate-400 tracking-tight"
+          className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-sky-600 to-pink-300 tracking-tight"
         >
-          Pinngam S.
+          PS.
         </a>
 
         <div className="hidden md:flex items-center space-x-8">
@@ -49,7 +49,7 @@ function Navbar() {
               {item.name}
             </a>
           ))}
-  
+
           <input
             type="checkbox"
             className="theme-controller hidden"
@@ -68,34 +68,16 @@ function Navbar() {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="md:hidden absolute top-full left-0 w-full bg-slate-50/80  border-b border-white/10 py-4 px-6 flex flex-col space-y-4 shadow-xl">
-          <a
-            href="#home"
-            onClick={toggleMenu}
-            className="text-slate-500 hover:text-slate-700 font-medium"
-          >
-            Home
-          </a>
-          <a
-            href="#profile"
-            onClick={toggleMenu}
-            className="text-slate-500 hover:text-slate-700 font-medium"
-          >
-            Profile
-          </a>
-          <a
-            href="#about"
-            onClick={toggleMenu}
-            className="text-slate-500 hover:text-slate-700 font-medium"
-          >
-            About
-          </a>
-          <a
-            href="#activities"
-            onClick={toggleMenu}
-            className="text-slate-500 hover:text-slate-700 font-medium"
-          >
-            Activities
-          </a>
+          {navItems.map((item) => (
+            <a
+              key={item.name}
+              href={item.href}
+              onClick={toggleMenu}
+              className="text-slate-500 hover:text-slate-700 font-medium"
+            >
+              {item.name}
+            </a>
+          ))}
         </div>
       )}
     </nav>

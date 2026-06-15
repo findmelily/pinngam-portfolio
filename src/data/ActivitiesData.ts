@@ -1,0 +1,27 @@
+import starterpackpic from "../assets/Starterpack.jpg";
+import helloworldpic from "../assets/Helloworld.jpg";
+import uxworkshoppic from "../assets/UXWorkshop.jpg";
+
+export const activities = [
+    {
+        image: starterpackpic,
+        title: "IT#29 - IT#30 Starterpack",
+        description:
+            "A starter pack camp for SIT freshy. I participated in the camp as an IT Fundamental Speaker teaching and making slides on Learning How To Learn, 21st Century Skills, Design Thinking, Business, and other related to IT.",
+        alt: "Starterpack30",
+    },
+    {
+        image: helloworldpic,
+        title: "SIT HelloWorld-Fennec",
+        description:
+            "A project camp for SIT freshy. I participated in the camp as a participant. I learned how to work in a team and how to manage web development the project. I also learned how to use React for front-end development.",
+        alt: "HelloWorld-Fennec",
+    },
+    {
+        image: uxworkshoppic,
+        title: "UX Workshop: Digital Experience Strategy",
+        description:
+            "Participated in UX Workshop by UX Association company. Learning how to analysis User Painpoint and find solution form this workshop. I'm doing UX solution quiz at the end of the course and got an honorable mention award.",
+        alt: "UX Workshop",
+    },
+];
