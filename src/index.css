@@ -101,3 +101,18 @@
     font-family: "LineSeedSansTH", sans-serif;
   }
 }
+
+@layer utilities {
+  .bg-coded-grid {
+    background-color: oklch(90.1% 0.058 230.902);
+    background-image: 
+      linear-gradient(to right, oklch(0% 0 0 / 0.15) 2px, transparent 1px),
+      linear-gradient(to bottom, oklch(0% 0 0 / 0.15) 2px, transparent 1px);
+    /* Set both gradients to a 40px by 40px tile */
+    background-size: 40px 40px, 40px 40px;
+    /* Ensure both gradients repeat to form the grid */
+    background-repeat: repeat, repeat;
+    /* Start both gradients from the top-left */
+    background-position: top left, top left;
+  }
+}
