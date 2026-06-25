@@ -70,7 +70,8 @@ export const Projects = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     whileHover={{ scale: 1.02 }}
-                    className="group cursor-pointer bg-white w-full rounded-2xl shadow-md border border-slate-100 hover:shadow-xl transition-all duration-500 flex flex-col overflow-hidden"
+                    style={{ willChange: "transform" }}
+                    className="group cursor-pointer bg-white w-full rounded-2xl shadow-md border border-slate-100 hover:shadow-xl transition-shadow duration-500 flex flex-col overflow-hidden"
                   >
               {project.image && (
                 <div className="relative w-full h-48 md:h-56 shrink-0 overflow-hidden bg-slate-100">
@@ -103,7 +104,7 @@ export const Projects = () => {
 
                 <div className="text-slate-600 leading-relaxed border-t border-slate-100 pt-5 flex-grow">
                   <p className="text-base line-clamp-3">
-                    {project.description[0]}
+                    {project.description}
                   </p>
                 </div>
 
@@ -136,7 +137,8 @@ export const Projects = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.2 }}
                   whileHover={{ scale: 1.02 }}
-                  className="group w-full bg-slate-50/50 rounded-2xl shadow-sm border-2 border-dashed border-slate-200 hover:border-sky-300 hover:shadow-md transition-all duration-500 flex flex-col items-center justify-center text-center p-8 min-h-[400px]"
+                  style={{ willChange: "transform" }}
+                  className="group w-full bg-slate-50/50 rounded-2xl shadow-sm border-2 border-dashed border-slate-200 hover:border-sky-300 hover:shadow-md transition-shadow duration-500 flex flex-col items-center justify-center text-center p-8 min-h-[400px]"
                 >
                   <div className="w-20 h-20 bg-white rounded-full shadow-sm flex items-center justify-center mb-6 transition-transform group-hover:scale-110 duration-500">
                     <FolderCode className="w-10 h-10 text-sky-400 opacity-80" />
@@ -146,11 +148,11 @@ export const Projects = () => {
                   </h3>
                   <p className="text-slate-500 max-w-sm">
                     {language === 'en' 
-                      ? "I'm currently working on something exciting! Stay tuned for updates on my latest endeavors."
-                      : "ฉันกำลังพัฒนาผลงานใหม่ที่น่าตื่นเต้นอยู่! โปรดติดตามความคืบหน้าเร็วๆ นี้"}
+                      ? "I'm currently working on something. Stay tuned for updates on my latest endeavors."
+                      : "พิณกำลังพัฒนาโปรเจคใหม่ ณ ขณะนี้ โปรดติดตามความคืบหน้าเร็ว ๆ นี้นะคะ"}
                   </p>
                   <div className="mt-8 px-5 py-2 rounded-full bg-sky-50 text-sky-600 text-sm font-semibold tracking-wide uppercase">
-                    {language === 'en' ? "Coming Soon" : "เร็วๆ นี้"}
+                    {language === 'en' ? "Coming Soon" : "เร็ว ๆ นี้"}
                   </div>
                 </motion.div>
               </div>
@@ -218,13 +220,13 @@ export const Projects = () => {
                     </span>
                   </div>
 
-                  <div className="text-slate-600 leading-relaxed space-y-6 mb-10">
+                  <ul className="text-slate-600 leading-relaxed mb-10 space-y-3 text-base md:text-lg
+                  [&>li]:relative [&>li]:pl-9 [&>li]:before:content-[''] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:top-1/2 [&>li]:before:-translate-y-1/2 [&>li]:before:w-3 [&>li]:before:h-3 [&>li]:before:bg-sky-600 [&>li]:before:rounded-full
+                  ">
                     {selectedProject.description.map((desc: string, idx: number) => (
-                      <p key={idx} className="text-lg md:text-xl font-medium text-slate-700">
-                        {desc}
-                      </p>
+                      <li key={idx}>{desc}</li>
                     ))}
-                  </div>
+                  </ul>
 
                   <div className="mt-auto pt-8 border-t border-slate-100 flex flex-col md:flex-row gap-8 justify-between items-start md:items-center">
                     <div className="flex-1">
@@ -248,7 +250,7 @@ export const Projects = () => {
                             className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-slate-900 text-white font-semibold hover:bg-slate-800 transition-colors shadow-md hover:shadow-lg hover:-translate-y-0.5"
                           >
                             <ExternalLink className="w-5 h-5" />
-                            {language === 'en' ? "Visit Live Site" : "เข้าชมเว็บจริง"}
+                            {language === 'en' ? "Visit Website" : "เข้าชมเว็บ"}
                           </a>
                         )}
                         {selectedProject.githubUrl && (

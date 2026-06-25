@@ -1,8 +1,13 @@
+import { motion } from "framer-motion";
 import type { CardProps } from "@/types";
 
 const Card = ({ imageSrc, altText, title, description }: CardProps) => {
   return (
-    <div className="bg-white flex h-full w-full flex-col overflow-hidden rounded-xl bg-clip-border shadow-md transition ease-in duration-500 transform hover:scale-105">
+    <motion.div
+      whileHover={{ scale: 1.02 }}
+      transition={{ duration: 0.3 }}
+      className="bg-white flex h-full w-full flex-col overflow-hidden rounded-xl bg-clip-border shadow-md hover:shadow-xl transition-shadow duration-500"
+    >
       <div className="relative m-0 overflow-hidden shrink-0 bg-transparent rounded-none shadow-none bg-clip-border">
         <img src={imageSrc} alt={altText} className="w-full h-40 md:h-48 object-cover" />
       </div>
@@ -14,7 +19,7 @@ const Card = ({ imageSrc, altText, title, description }: CardProps) => {
           {description}
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -42,11 +42,18 @@ export interface ActivityItem {
 }
 
 // ===== Aboutme Types =====
+export type SkillLevel = "beginner" | "intermediate" | "advanced";
+
+export interface SkillItem {
+  name: string;
+  level: SkillLevel;
+}
+
 export interface AboutmeData {
   title: string;
   subtitle: string;
   description: string;
-  skills: string[];
+  skills: SkillItem[];
   resumePath: string;
   githubUrl: string;
   profileImage: string;

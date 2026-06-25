@@ -10,7 +10,7 @@ export const Education = () => {
   return (
     <section id="education" className="container mx-auto px-6 py-12 md:py-20">
       <div className="max-w-5xl mx-auto flex flex-col gap-10">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -34,7 +34,8 @@ export const Education = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ scale: 1.02 }}
-              className="group relative flex flex-col gap-6 bg-white p-6 md:p-8 rounded-2xl shadow-md border border-slate-100 hover:shadow-xl transition-all duration-500"
+              style={{ willChange: "transform" }}
+              className="group relative flex flex-col gap-6 bg-white p-6 md:p-8 rounded-2xl shadow-md border border-slate-100 hover:shadow-xl transition-shadow duration-500"
             >
               {/* Header: Logo, University, Faculty + Period */}
               <div className="flex flex-col sm:flex-row items-start gap-5">
@@ -87,7 +88,7 @@ export const Education = () => {
                 </div>
                 <div className="bg-sky-50/50 p-4 rounded-xl border border-sky-100 shadow-sm">
                   <span className="block text-xs md:text-sm text-sky-600 font-bold uppercase tracking-wider">
-                    {language === 'en' ? "TETET Score" : "คะแนนสอบ TETET"}
+                    {language === "en" ? "TETET Score" : "คะแนนสอบ TETET"}
                   </span>
                   <span className="block text-2xl md:text-3xl font-extrabold text-slate-900 mt-1">
                     {edu.tetetScore}
@@ -98,9 +99,9 @@ export const Education = () => {
               {/* Key Coursework */}
               <div className="mt-2">
                 <h4 className="text-sm font-bold uppercase tracking-wider text-slate-400 mb-4">
-                  {language === 'en' ? "Key Coursework" : "รายวิชาสำคัญ"}
+                  {language === "en" ? "Key Coursework" : "รายวิชาที่สำคัญ"}
                 </h4>
-                <ul className="flex flex-wrap items-center justify-start gap-2.5 [&>li]:bg-slate-50 [&>li]:border [&>li]:border-slate-200 [&>li]:text-slate-700 [&>li]:px-4 [&>li]:py-1.5 [&>li]:rounded-full [&>li]:transition-all [&>li]:duration-300 [&>li]:ease-in [&>li:hover]:bg-sky-50 [&>li:hover]:text-sky-700 [&>li:hover]:border-sky-200 [&>li:hover]:scale-105 text-sm md:text-base font-medium shadow-sm">
+                <ul className="flex flex-wrap items-center justify-start gap-2.5 [&>li]:bg-slate-50 [&>li]:border [&>li]:border-slate-200 [&>li]:text-slate-700 [&>li]:px-4 [&>li]:py-1.5 [&>li]:rounded-full [&>li]:transition-all [&>li]:duration-300 [&>li]:ease-in [&>li:hover]:bg-sky-50 [&>li:hover]:text-sky-700 [&>li:hover]:border-sky-200 [&>li:hover]:scale-105 text-sm md:text-base font-medium">
                   {edu.coursework.map((course, i) => (
                     <li key={i}>{course}</li>
                   ))}

@@ -34,7 +34,8 @@ export const Experience = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ scale: 1.02 }}
-              className="group relative flex flex-col bg-white p-6 md:p-8 rounded-2xl shadow-md border border-slate-100 hover:shadow-xl transition-all duration-500"
+              style={{ willChange: "transform" }}
+              className="group relative flex flex-col bg-white p-6 md:p-8 rounded-2xl shadow-md border border-slate-100 hover:shadow-xl transition-shadow duration-500"
             >
               <div className="flex-1">
                 <h3 className="text-2xl md:text-3xl font-bold text-slate-900 leading-tight">
@@ -49,13 +50,15 @@ export const Experience = () => {
                   </span>
                 </div>
                 
-                <div className="text-slate-600 leading-relaxed mb-6 space-y-3 text-base md:text-lg">
+                <ul className="text-slate-600 leading-relaxed mb-6 space-y-3 text-base md:text-lg
+                [&>li]:relative [&>li]:pl-9 [&>li]:before:content-[''] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:top-1/2 [&>li]:before:-translate-y-1/2 [&>li]:before:w-3 [&>li]:before:h-3 [&>li]:before:bg-sky-600 [&>li]:before:rounded-full
+                ">
                   {work.description.map((desc, idx) => (
-                    <p key={idx}>{desc}</p>
+                    <li key={idx}>{desc}</li>
                   ))}
-                </div>
+                </ul>
                 
-                <ul className="flex flex-wrap items-center justify-start gap-2.5 [&>li]:bg-slate-50 [&>li]:border [&>li]:border-slate-200 [&>li]:text-slate-700 [&>li]:px-4 [&>li]:py-1.5 [&>li]:rounded-full [&>li]:transition-all [&>li]:duration-300 [&>li]:ease-in [&>li:hover]:bg-sky-50 [&>li:hover]:text-sky-700 [&>li:hover]:border-sky-200 [&>li:hover]:scale-105 text-sm md:text-base font-medium shadow-sm">
+                <ul className="flex flex-wrap items-center justify-start gap-2.5 [&>li]:bg-slate-50 [&>li]:border [&>li]:border-slate-200 [&>li]:text-slate-700 [&>li]:px-4 [&>li]:py-1.5 [&>li]:rounded-full [&>li]:transition-all [&>li]:duration-300 [&>li]:ease-in [&>li:hover]:bg-sky-50 [&>li:hover]:text-sky-700 [&>li:hover]:border-sky-200 [&>li:hover]:scale-105 text-sm md:text-base font-medium">
                   {work.skills.map((skill, i) => (
                     <li key={i}>
                       {skill}

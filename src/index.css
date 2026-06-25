@@ -114,5 +114,6 @@
     background-repeat: repeat, repeat;
     /* Start both gradients from the top-left */
     background-position: top left, top left;
+    border-bottom: 2px solid oklch(0% 0 0 / 0.15);
   }
 }
