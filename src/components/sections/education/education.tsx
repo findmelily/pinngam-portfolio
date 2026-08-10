@@ -6,7 +6,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 export const Education = () => {
   const { language } = useLanguage();
   const educationData = educationDataAll[language];
-
+  
   return (
     <section id="education" className="container mx-auto px-6 py-12 md:py-20">
       <div className="max-w-5xl mx-auto flex flex-col gap-10">
@@ -76,8 +76,8 @@ export const Education = () => {
                 )}
               </div>
 
-              {/* GPAX and TETET Stats */}
-              <div className="grid grid-cols-2 gap-4 max-w-md">
+              {/* GPAX, TETET, and TOEIC Stats */}
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-xl">
                 <div className="bg-sky-50/50 p-4 rounded-xl border border-sky-100 shadow-sm">
                   <span className="block text-xs md:text-sm text-sky-600 font-bold uppercase tracking-wider">
                     GPAX
@@ -86,6 +86,16 @@ export const Education = () => {
                     {edu.gpax}
                   </span>
                 </div>
+
+                <div className="bg-sky-50/50 p-4 rounded-xl border border-sky-100 shadow-sm">
+                  <span className="block text-xs md:text-sm text-sky-600 font-bold uppercase tracking-wider">
+                    {language === "en" ? "TOEIC Score" : "คะแนน TOEIC"}
+                  </span>
+                  <span className="block text-2xl md:text-3xl font-extrabold text-slate-900 mt-1">
+                    {edu.toeicScore}
+                  </span>
+                </div>
+
                 <div className="bg-sky-50/50 p-4 rounded-xl border border-sky-100 shadow-sm">
                   <span className="block text-xs md:text-sm text-sky-600 font-bold uppercase tracking-wider">
                     {language === "en" ? "TETET Score" : "คะแนนสอบ TETET"}

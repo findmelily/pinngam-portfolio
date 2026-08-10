@@ -87,6 +87,7 @@ export interface EducationItem {
   degree: string;
   gpax: string;
   tetetScore: string;
+  toeicScore?: string;
   coursework: string[];
   logo?: string;
   honors?: string;
